@@ -30,8 +30,6 @@ vector<int> solution(vector<int> progresses, vector<int> speeds) {
             answer.pop_back();
             answer.push_back(tmp + 1);
         }
-
-
     }
 
     return answer;
