@@ -77,10 +77,7 @@ string reg(string p) {
 
 
 string solution(string p) {
-    
     string answer = "";
-    
     answer = reg(p);
-
     return answer;
 }
