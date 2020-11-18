@@ -26,7 +26,7 @@ vector<int> solution(int N, vector<int> stages) {
         number -= count;
     }
     
-    for (int i = 1; i < N; i++) { 
+    for (int i = 0; i < N; i++) { 
         auto itr = max_element(tmp.begin(), tmp.end());
         answer.push_back(itr - tmp.begin() + 1);
         *itr = -111;

@@ -18,7 +18,7 @@ using namespace std;
 //}
 int solution(vector<vector<int>> board, vector<int> moves) {
     int answer = 0;
-    vector<vector<int>> visited(board.size(), vector<int>(board.size(), 1));
+    //vector<vector<int>> visited(board.size(), vector<int>(board.size(), 1));
     stack<int> basket;
     int b = 0;
     
