@@ -1,8 +1,9 @@
 #include <vector>
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-//vector<int>  dfs(int a, vector<int>& nums, vector<bool>& check, int cnt, vector<int> &tmp) {
+//vector<int> dfs(int a, vector<int>& nums, vector<bool>& check, int cnt, vector<int> &tmp) {
 //
 //    cnt += 1;
 //    for (int i = 0; i < nums.size(); i++) {
@@ -54,42 +55,36 @@ using namespace std;
 //    return answer;
 //}
 
+vector<int> tempList;
 
-//#include <vector>
-//#include <iostream>
-//#include <cmath>
-//using namespace std;
-//
-//vector<int> tempList;
-//
-//bool primeNumber(int a) {
-//    for (int i = 2; i <= sqrt(a); i++)
-//        if (a % i == 0)//i가 나누어떨어지면 소수가 아님 
-//            return false;
-//    return true;
-//}
-//
-//void serch(vector<int>& nums, int index = 0, int count = 0, int sum = 0) {
-//    if (index >= nums.size())
-//        return;
-//    sum += nums[index];
-//    for (int i = index; i < nums.size(); i++) {
-//        if (count == 2) {
-//            tempList.push_back(sum);
-//            return;
-//        }
-//        else
-//            serch(nums, i + 1, count + 1, sum);
-//    }
-//}
-//
-//int solution(vector<int> nums) {
-//    int answer = 0;
-//    for (int i = 0; i < nums.size() - 2; i++)
-//        serch(nums, i);
-//    for (auto a : tempList) {
-//        if (primeNumber(a))
-//            answer++;
-//    }
-//    return answer;
-//}
+bool primeNumber(int a) {
+    for (int i = 2; i <= sqrt(a); i++)
+        if (a % i == 0)//i가 나누어떨어지면 소수가 아님 
+            return false;
+    return true;
+}
+
+void serch(vector<int>& nums, int index = 0, int count = 0, int sum = 0) {
+    if (index >= nums.size())
+        return;
+    sum += nums[index];
+    for (int i = index; i < nums.size(); i++) {
+        if (count == 2) {
+            tempList.push_back(sum);
+            return;
+        }
+        else
+            serch(nums, i + 1, count + 1, sum);
+    }
+}
+
+int solution(vector<int> nums) {
+    int answer = 0;
+    for (int i = 0; i < nums.size() - 2; i++)
+        serch(nums, i);
+    for (auto a : tempList) {
+        if (primeNumber(a))
+            answer++;
+    }
+    return answer;
+}

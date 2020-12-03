@@ -6,7 +6,6 @@
 using namespace std;
 
 int solution(vector<vector<string>> clothes) {
-
 	map<string, int> cloth_map;
 	for (vector<string> c : clothes) {
 		cloth_map[c[1]]++;
@@ -16,5 +15,15 @@ int solution(vector<vector<string>> clothes) {
 	for (it = cloth_map.begin(); it != cloth_map.end(); it++) {
 		answer = answer * (it->second + 1);
 	}
+	for (it = cloth_map.begin(); it != cloth_map.end(); it++) {
+		cout << it->first << it->second << endl;
+		
+	}
 	return answer - 1; //1À» »©ÁÖÀÚ
+}
+
+int main() {
+	cout<<solution({ {"yellow_hat", "headgear"},{"blue_sunglasses", "eyewear"},{"green_turban", "headgear"} });
+
+
 }
