@@ -11,7 +11,7 @@ vector<int> solution(vector<int> progresses, vector<int> speeds) {
     int cnt = 0; // 완료하는 날 하나씩
     int max = 0; //최대값 갱신
     for (int i = 0; i < progresses.size(); i++) {
-        progresses[i] = 100 - progresses[i];
+        progresses[i] = 100 - progresses[i]; //남은것들
         if (progresses[i] % speeds[i] == 0) {
             cnt = progresses[i] / speeds[i];
             cntSet.push_back(cnt);
